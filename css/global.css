@@ -43,3 +43,8 @@
     width: 100%;
     background: white;
 }
+
+.sources {
+    width: 50vw;
+    margin: 0 auto;
+}

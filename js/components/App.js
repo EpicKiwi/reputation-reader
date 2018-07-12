@@ -1,6 +1,7 @@
 import * as React from 'react'
 
 import AddForm from './AddForm'
+import ReputationSource from './ReputationSource'
 
 class App extends React.Component {
 
@@ -27,6 +28,11 @@ class App extends React.Component {
                     <AddForm/>
                 </nav>
             </header>
+            <section className="sources">
+                <ReputationSource/>
+                <ReputationSource/>
+                <ReputationSource/>
+            </section>
         </div>
     }
 
