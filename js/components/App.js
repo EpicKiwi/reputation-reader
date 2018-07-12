@@ -1,5 +1,7 @@
 import * as React from 'react'
 
+import AddForm from './AddForm'
+
 class App extends React.Component {
 
     constructor() {
@@ -22,7 +24,7 @@ class App extends React.Component {
                     <div className="description">An experiment by Baptiste Saclier</div>
                 </div>
                 <nav className="toolbar">
-
+                    <AddForm/>
                 </nav>
             </header>
         </div>

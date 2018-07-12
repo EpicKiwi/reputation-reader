@@ -1,0 +1,26 @@
+.add-form {
+    width: 100%;
+    height: 50px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.add-form .profile-url {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 5px 20px;
+    font-size: 20px;
+}
+
+.add-form .profile-submit {
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 25px;
+    width: 50px;
+    cursor: pointer;
+}
