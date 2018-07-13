@@ -20,7 +20,6 @@ class ReputationSourceStore extends Store {
             url,
             state: "PENDING",
             infos: {},
-            error: '',
             html: '',
             type: SourceManager.getSourceType(url)
         }
