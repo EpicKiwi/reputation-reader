@@ -45,6 +45,16 @@
 }
 
 .sources {
-    width: 50vw;
+    width: 80vw;
     margin: 0 auto;
+}
+
+.validate-button {
+    background-color: #00b82f;
+    padding: 10px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
 }

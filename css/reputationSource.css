@@ -34,3 +34,17 @@
     padding: 5px 0;
     text-overflow: ellipsis;
 }
+
+.reputation-source .source-content {
+    width: 100%;
+}
+
+.reputation-source .source-html {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 10px;
+}
+
+.reputation-source .content-validation {
+    text-align: center;
+}

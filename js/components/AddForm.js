@@ -1,4 +1,6 @@
 import * as React from 'react'
+import ReputationSourceStore from '../stores/ReputationSourceStore'
+import SourceManager from '../sources/SourceManager'
 
 import css from '../../css/addForm.css'
 
@@ -10,6 +12,8 @@ class AddForm extends React.Component {
         this.state = {
             fieldValue: ''
         }
+
+        this.urlReg = /(https?:\/\/)?([^./]+\.)+[^./]{2,5}\/.+/
 
         this.onSubmit = this.onSubmit.bind(this)
         this.onFieldChange = this.onFieldChange.bind(this)
@@ -23,7 +27,16 @@ class AddForm extends React.Component {
 
     onSubmit(e){
         e.preventDefault()
-        console.log(this.state.fieldValue)
+        if(!this.state.fieldValue.match(this.urlReg))
+            return
+        if(ReputationSourceStore.state.sources.find((el) => el.url == this.state.fieldValue))
+            return
+        if(SourceManager.getSourceType(this.state.fieldValue) == "Unknown")
+            return
+        ReputationSourceStore.commit("addSource",{url:this.state.fieldValue})
+        this.setState({
+            fieldValue: ''
+        })
     }
 
     onFieldChange(e){
@@ -35,7 +48,7 @@ class AddForm extends React.Component {
     render() {
         return <form className="add-form" onSubmit={this.onSubmit}>
             <input
-                value={this.state.value}
+                value={this.state.fieldValue}
                 onChange={this.onFieldChange}
                 type="text"
                 placeholder="Paste a profile URL..."

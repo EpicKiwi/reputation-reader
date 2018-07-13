@@ -1,4 +1,5 @@
-const Rx = require("rxjs");
+import * as Rx from 'rxjs'
+import * as uuid from 'uuid/v4'
 
 class Store {
 
@@ -39,9 +40,9 @@ class Store {
     }
 
     generateId(){
-        return (new Date()).getTime().toString(16)+""+Math.round(Math.random()*999999).toString(16)
+        return uuid()
     }
 
 }
 
-module.exports = Store;
+export default Store

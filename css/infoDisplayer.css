@@ -1,0 +1,17 @@
+.info-displayer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5px 0;
+}
+
+.info-displayer .info-name {
+    color: #7d7d7d;
+    flex: 1;
+}
+
+.info-displayer .info-value {
+    color: #282828;
+    flex: 2;
+}
