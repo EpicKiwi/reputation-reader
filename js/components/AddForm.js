@@ -51,7 +51,7 @@ class AddForm extends React.Component {
                 value={this.state.fieldValue}
                 onChange={this.onFieldChange}
                 type="text"
-                placeholder="Paste a profile URL..."
+                placeholder="Airbnb, Ebay or StackOverflow profile URL..."
                 className="profile-url" />
             <button className="profile-submit">
                 <i className="mdi mdi-arrow-right"></i>
