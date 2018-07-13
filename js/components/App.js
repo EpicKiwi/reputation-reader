@@ -32,7 +32,7 @@ class App extends React.Component {
         let sourceElements = this.state.sources
             .map((source) => {
             return <ReputationSource id={source.id} key={source.id} />
-        })
+        }).reverse()
 
         return <div className="app">
             <header className="header">
