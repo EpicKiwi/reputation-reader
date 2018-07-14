@@ -1,12 +1,12 @@
 {
   "name": "reputation-reader",
   "version": "1.0.0",
-  "description": "A reader of reputation on AirBnBand Ebay",
+  "description": "A reader of reputation on AirBnB and Ebay",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "dev": "webpack-dev-server --watch --host 0.0.0.0"
+    "dev": "webpack-dev-server --watch --open"
   },
   "author": "EpicKiwi <me@epickiwi.fr>",
   "license": "MIT",
