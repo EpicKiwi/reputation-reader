@@ -7,6 +7,12 @@ class Ebay extends SourceType {
         this.name = "Ebay"
         this.urlReg = /(https?:\/\/)?(www\.)?(ebay\.com\.?)[^./]{2,5}?\/.+/
         this.extractors = {
+            username: {name: "User name", selector:'.mbg-id', extractor(el){
+                    return el.innerHTML.replace(/<[^>]+>[^<]+<\/[^>]+>/,"")
+                }},
+            percPositiveFeedback: {name: "Positive feedback %", selector:'.perctg', extractor(el){
+                    return parseInt(el.innerHTML.replace(/% positive feedback/,"").trim())
+                }},
             score: {name: "Feedback score", selector:'.usrinfo .mbg-l a:nth-child(2)', extractor(el){
                     return parseInt(el.innerHTML.replace(/<span[^>]+>[^<]+<\/span>/,""))
                 }},
