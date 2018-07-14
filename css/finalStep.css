@@ -1,0 +1,22 @@
+.final-step {
+    padding: 30px 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-top: solid 1px rgba(0,0,0,0.3);
+}
+
+.final-step.hidden {
+    display: none;
+}
+
+.final-step .description {
+    padding: 10px 0;
+}
+
+.final-step .great-title {
+    font-size: 30px;
+    color: #00b82f;
+    font-weight: lighter;
+}

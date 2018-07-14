@@ -4,6 +4,7 @@ import AddForm from './AddForm'
 import ReputationSource from './ReputationSource'
 import ReputationSourceStore from '../stores/ReputationSourceStore'
 import SourceManager from '../sources/SourceManager'
+import FinalStep from "./FinalStep";
 
 class App extends React.Component {
 
@@ -47,6 +48,7 @@ class App extends React.Component {
             <section className="sources">
                 {sourceElements}
             </section>
+            <FinalStep/>
         </div>
     }
 

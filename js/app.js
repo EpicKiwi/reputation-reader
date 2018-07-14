@@ -10,11 +10,3 @@ ReactDom.render(
     <App></App>,
     document.getElementById("root")
 )
-
-
-//TODO DEBUG
-
-import ReputationSourceStore from './stores/ReputationSourceStore'
-ReputationSourceStore.getCommitObservable().subscribe((ev) => {
-    console.log(ev)
-})
