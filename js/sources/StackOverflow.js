@@ -7,6 +7,16 @@ class StackOverflow extends SourceType {
         this.name = "StackOverflow"
         this.urlReg = /(https?:\/\/)?(www\.)?(stackoverflow\.com\.?)\/.+/
         this.extractors = {
+            username: {
+                name: "User name", selector: '.user-card-name', extractor(el) {
+                    return el.innerHTML.replace(/<[^>]+>[^<]*<\/[^>]+>/ig,"").trim()
+                }
+            },
+            position: {
+                name: "User position", selector: '.current-position', extractor(el) {
+                    return el.innerHTML.trim()
+                }
+            },
             reputation: {
                 name: "Reputation", selector: '.reputation', extractor(el) {
                     return parseInt(el.innerHTML.replace(/<span[^>]+>[^<]*<\/span>/ig,"").trim())
