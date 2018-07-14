@@ -10,6 +10,10 @@
     justify-content: center;
 }
 
+.reputation-source.sended {
+    opacity: 0.5;
+}
+
 .reputation-source .icon {
     width: 75px;
     text-align: center;

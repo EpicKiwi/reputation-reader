@@ -49,6 +49,10 @@ class ReputationSource extends React.Component {
         })
     }
 
+    get sourceState(){
+        return this.state.source ? this.state.source.state : ''
+    }
+
     get sourceType(){
         return this.state.source ? this.state.source.type : ''
     }
@@ -67,7 +71,7 @@ class ReputationSource extends React.Component {
         let content = ''
 
         if(this.state.source != null) {
-            switch (this.state.source.state) {
+            switch (this.sourceState) {
                 case "PENDING":
                     icon = <i className="mdi mdi-progress-download"></i>
                     break;
@@ -77,6 +81,9 @@ class ReputationSource extends React.Component {
                     break;
                 case "CLEAR":
                     icon = <i className="mdi mdi-check"></i>
+                    break;
+                case "SENDED":
+                    icon = <i className="mdi mdi-check-all"></i>
                     break;
             }
 
@@ -97,6 +104,7 @@ class ReputationSource extends React.Component {
                             </div>
                     break;
                 case "CLEAR":
+                case "SENDED":
                     let infos = Object.keys(this.state.source.infos).map((key) => {
                         let info = this.state.source.infos[key]
                         return <InfoDisplayer name={info.name} value={info.value} key={key}/>
@@ -106,8 +114,7 @@ class ReputationSource extends React.Component {
             }
         }
 
-
-        return <div className="reputation-source">
+        return <div className={'reputation-source'+(this.sourceState == "SENDED" ? ' sended' : '')}>
             <div className="icon">
                 {icon}
             </div>

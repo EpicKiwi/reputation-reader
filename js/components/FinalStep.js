@@ -19,7 +19,14 @@ class FinalStep extends React.Component {
 
     componentDidMount() {
         ReputationSourceStore.getActionObservable("updateSource")
-            .subscribe((ev) => this.refreshSources())
+            .subscribe((ev) => {
+                this.refreshSources()
+                if(ev.options.state == "CLEAR") {
+                    this.setState({
+                        sendState: "WAITING"
+                    })
+                }
+            })
     }
 
     refreshSources(){
@@ -56,14 +63,13 @@ class FinalStep extends React.Component {
             console.log(data)
             await utils.postJson("https://reputationaire.com/imaginary", data)
         } catch(err) {
-            this.setState({
-                sendState: "CLEAR",
-                error:err
-            })
-            return
+            console.error(err)
         }
         this.setState({
             sendState: "CLEAR"
+        })
+        data.sources.forEach((el) => {
+            ReputationSourceStore.commit("updateSource",{id:el.id,state:"SENDED"})
         })
     }
 
