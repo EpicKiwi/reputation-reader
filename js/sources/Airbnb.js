@@ -5,7 +5,7 @@ class Airbnb extends SourceType {
     constructor(){
         super()
         this.name = "Airbnb"
-        this.urlReg = /(https?:\/\/)?(www\.)?(airbnb\.com\.?)[^./]{2,5}?\/.+/
+        this.urlReg = /(https?:\/\/)?(www\.)?(airbnb\.)([^./]{2,5}\.?)+\/.+/
         this.extractors = {
 
             username: {name: "Name",

@@ -54,6 +54,8 @@ class SourceManager {
         Object.keys(sourceType.extractors).forEach((key) => {
             let extractor = sourceType.extractors[key]
             let element = parsedHtml.querySelector(extractor.selector)
+            if(!element)
+                return
             let info = extractor.extractor(element)
             if(info !== null || info !== undefined) {
                 infos[key] = {

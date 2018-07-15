@@ -9,7 +9,8 @@ class StackOverflow extends SourceType {
         this.extractors = {
             username: {
                 name: "User name", selector: '.user-card-name', extractor(el) {
-                    return el.innerHTML.replace(/<[^>]+>[^<]*<\/[^>]+>/ig,"").trim()
+                    console.log(el.childNodes[0])
+                    return el.childNodes[0].textContent.trim()
                 }
             },
             position: {
